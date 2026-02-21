@@ -4,6 +4,19 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+/org.eclipse.core.resources.prefs
+/org.eclipse.jdt.apt.core.prefs
+/org.eclipse.jdt.core.prefs
+/org.eclipse.m2e.core.prefs
+/org.springframework.ide.eclipse.prefs
+
+/target/
+/.settings/
+/.classpath
+/.project
+/.classpath
+*.class
+
 ### STS ###
 .apt_generated
 .classpath
