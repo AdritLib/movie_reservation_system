@@ -1,4 +1,6 @@
-package com.moviereservation.model;
+package com.moviereservation.user;
+
+import com.moviereservation.enums.EnumUserRole;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -19,16 +21,23 @@ public class BEUser {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@Column(nullable = false)
-	private String name;
+	
+	@Column(nullable = false, unique = true)
+	private String username;
+	
 	@Column(nullable = false)
 	private String password;
-	@Column(nullable = false)
+	
+	@Column(nullable = false, unique = true)
 	private String email;
 	
-	public BEUser(String name, String password, String email) {
-		this.name = name;
+	@Column(nullable = false)
+	private String role;
+	
+	public BEUser(String username, String password, String email, EnumUserRole role) {
+		this.username = username;
 		this.password = password;
 		this.email = email;
+		this.role = role.toString();
 	}
 }
